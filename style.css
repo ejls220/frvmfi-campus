@@ -10111,19 +10111,21 @@ h6,
     pointer-events: none;
 }
 
-.video-container {
-  width: 100%;
+.video-background {
   position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  width: 100%;
+  height: 100vh;         /* full screen video */
   overflow: hidden;
 }
 
-.video-container video {
+.video-background iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* Removes black bars */
+  top: 50%;
+  left: 50%;
+  width: 177vh;          /* makes 16:9 fill vertical mobile screens */
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;  /* video cannot be clicked (optional) */
 }
+
 
