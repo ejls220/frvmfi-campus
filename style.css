@@ -10111,6 +10111,13 @@ h6,
     pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .video-background iframe {
+    width: 177vh;        /* perfect for phones */
+    height: 100vh;
+  }
+}
+
 
 
 
