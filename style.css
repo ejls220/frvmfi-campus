@@ -10118,12 +10118,12 @@ h6,
   }
 }
 
-#buildingImg {
+#buildingImgContainer {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* IMPORTANT */
-    object-position: center;
+    overflow: hidden;
 }
+
 
 
 
