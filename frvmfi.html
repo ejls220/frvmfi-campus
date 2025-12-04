@@ -165,40 +165,44 @@
             </div>
         </div>
 
-        <!-- Right Column: Dropdown & Description -->
+<div class="container py-5">
+    <!-- Section Title -->
+    <h1 class="text-uppercase text-primary mb-5">CAMPUS LANDMARKS</h1>
 
-            <div class="col-lg-6" id="detailsContainer">
-        <h1 class="text-uppercase text-primary mb-4">CAMPUS LANDMARKS</h1>
-        
-        <div class="dropdown mb-4">
-            <button id="dropdownButton" class="btn btn-primary dropdown-toggle w-100 py-3" type="button" data-toggle="dropdown">
-                <span class="material-icons mr-2">location_on</span>
-                <span id="selectedBuildingName">Select Building</span>
-            </button>
-            <div class="dropdown-menu w-100" id="buildingDropdown">
-                <input type="text" id="buildingSearchInput" class="form-control" placeholder="Search buildings..." aria-label="Search">
-                <!-- Dropdown items populated by JS -->
+    <div class="row" id="campusSection">
+        <!-- Left Column: Image -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="position-relative" id="imageCard" style="min-height: 450px;">
+                <img id="buildingImg" class="w-100 h-100" 
+                     src="img/ground.jpg"
+                     style="object-fit: cover;">
             </div>
         </div>
 
-        <p id="buildingDesc">Select a building from the dropdown menu to see details.</p>
-    </div>
-
-
-                        <p id="buildingDesc">Select a building from the dropdown menu to see details.</p>
-                    </div>
-
+        <!-- Right Column: Dropdown & Description -->
+        <div class="col-lg-6" id="detailsContainer">
+            <h1 class="text-uppercase text-primary mb-4">CAMPUS LANDMARKS</h1>
+            
+            <div class="dropdown mb-4">
+                <button id="dropdownButton" class="btn btn-primary dropdown-toggle w-100 py-3" type="button" data-toggle="dropdown">
+                    <span class="material-icons mr-2">location_on</span>
+                    <span id="selectedBuildingName">Select Building</span>
+                </button>
+                <div class="dropdown-menu w-100" id="buildingDropdown">
+                    <input type="text" id="buildingSearchInput" class="form-control" placeholder="Search buildings..." aria-label="Search">
+                    <!-- Dropdown items populated by JS -->
                 </div>
             </div>
+
+            <p id="buildingDesc">Select a building from the dropdown menu to see details.</p>
         </div>
     </div>
+</div>
 
 
 
 
     <!-- About End -->
-
-    
 
 
     <!-- Feature Start -->
@@ -654,6 +658,7 @@
 
 
 </html>
+
 
 
 
