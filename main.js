@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const buildingData = {
         ground: { name: "Ground Area", img: "/frvmfi/img/ground.jpg", desc: "The <strong>Ground Area</strong> is the central hub, used for school assemblies, large-scale events, and various student activities.", materialIcon: "event" },
         rotc: { name: "ROTC Building", img: "/frvmfi/img/rotc.jpg", desc: "This building is dedicated to <strong>ROTC military training</strong> and related program offices.", materialIcon: "military_tech" },
-        chapel: { name: "School Chapel", img: "img/school-chapel.jpg", desc: "A peaceful and serene space designated for <strong>worship, prayer, and quiet reflection</strong> for all members of the community.", materialIcon: "church" },
+        chapel: { name: "School Chapel",img: "img/school-chapel.jpg", desc: "A peaceful and serene space designated for <strong>worship, prayer, and quiet reflection</strong> for all members of the community.", materialIcon: "church" },
         blue: { name: "Blue Building", img: "/frvmfi/img/blue-building.jpg", desc: "The <strong>Blue Building</strong> houses numerous general classrooms and departmental offices.", materialIcon: "school" },
         elementary: { name: "Elementary School", img: "/frvmfi/img/elementary.jpg", desc: "The dedicated facility for our <strong>youngest learners</strong>, containing classrooms and play areas for the elementary grades.", materialIcon: "child_care" },
         stage: { name: "Main Stage", img: "/frvmfi/img/stage.jpg", desc: "The <strong>Stage</strong> is the venue for major school performances, ceremonies, and presentations.", materialIcon: "theater_comedy" },
@@ -246,6 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elements.searchInput.addEventListener("keyup", filterBuildings);
     }
 });
+
 
 
 
