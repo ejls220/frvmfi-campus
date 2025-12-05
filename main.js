@@ -201,10 +201,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = buildingData[key];
 
         // Fade effect
-        elements.buildingImg.style.opacity = '0.1'; 
+        elements.buildingImg.style.transition = "opacity 0.3s";
+        elements.buildingImg.style.opacity = '0';
         setTimeout(() => {
-            elements.buildingImg.src = "img/" + data.img;
-            elements.buildingImg.style.opacity = '1'; 
+            elements.buildingImg.src = data.img;
+            elements.buildingImg.style.opacity = '1';
         }, 150);
 
         // Update description and dropdown button text
@@ -231,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elements.searchInput.addEventListener("keyup", filterBuildings);
     }
 });
+
 
 
 
