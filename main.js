@@ -164,84 +164,89 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Populate Dropdown
-    function populateDropdown() {
+
+        function populateUI() {
         Object.keys(buildingData).forEach(key => {
             const data = buildingData[key];
 
+            // A. Create Dropdown Item
             const item = document.createElement("a");
             item.classList.add("dropdown-item");
             item.dataset.key = key;
             item.href = "#";
-
+            
+            // Icon element for visual cue
             const iconHTML = `<span class="material-icons mr-2" style="font-size: 1.2rem;">${data.materialIcon}</span>`;
+            
+            // Item structure: Icon + Name
             item.innerHTML = `${iconHTML} ${data.name}`;
-
+            
             item.addEventListener("click", (e) => {
                 e.preventDefault();
                 updateBuilding(key);
             });
-
+            // We append the item to the dropdown, after the search input (if it exists)
             elements.dropdown.appendChild(item);
         });
     }
-
-    // Filter dropdown items
+    
+    // --- NEW: FILTER FUNCTIONALITY ---
     function filterBuildings() {
         const filter = elements.searchInput.value.toUpperCase();
         const items = elements.dropdown.querySelectorAll(".dropdown-item");
 
         items.forEach(item => {
             const text = item.textContent || item.innerText;
-            item.style.display = text.toUpperCase().includes(filter) ? "" : "none";
+            if (text.toUpperCase().indexOf(filter) > -1) {
+                // Show the item
+                item.style.display = ""; 
+            } else {
+                // Hide the item
+                item.style.display = "none";
+            }
         });
     }
 
-    function filterBuildings() {
-        const filter = elements.searchInput.value.toUpperCase();
-        const items = elements.dropdown.querySelectorAll(".dropdown-item");
-
-        items.forEach(item => {
-            const text = item.textContent || item.innerText;
-            item.style.display = text.toUpperCase().includes(filter) ? "" : "none";
-        });
-    }
-
-    // Update building info
+    // --- 2. CORE FUNCTION: UPDATE UI STATE ---
     function updateBuilding(key) {
         const data = buildingData[key];
 
-        // Fade effect
-        elements.buildingImg.style.transition = "opacity 0.3s";
-        elements.buildingImg.style.opacity = '0';
+        // 1. Update Image (with a smooth transition)
+        elements.buildingImg.style.opacity = '0.1'; 
         setTimeout(() => {
-            elements.buildingImg.src = data.img;
-            elements.buildingImg.style.opacity = '1';
+            elements.buildingImg.src = "img/" + data.img;
+            elements.buildingImg.style.opacity = '1'; 
         }, 150);
 
-        // Update description and dropdown button text
+        
+
+        // 2. Update Description Text
         elements.buildingDesc.innerHTML = data.desc;
-        elements.dropdownButtonText.innerHTML = data.name;
 
-        // Set active item
+        // 3. Update Dropdown Button Text
+        elements.dropdownButtonText.innerHTML = `${data.name}`;
+
+        // 4. Update Active States (Dropdown only)
         document.querySelectorAll(".dropdown-item").forEach(el => el.classList.remove("active"));
-        const activeItem = document.querySelector(`.dropdown-item[data-key="${key}"]`);
-        if (activeItem) activeItem.classList.add("active");
-
-        // Close dropdown on selection
-        if (window.bootstrap) { // Bootstrap 5
-            const dropdown = bootstrap.Dropdown.getInstance(document.getElementById('dropdownButton'));
-            if (dropdown) dropdown.hide();
+        document.querySelector(`.dropdown-item[data-key="${key}"]`).classList.add("active");
+        
+        // 5. Scroll to Image on mobile/small screens for visibility
+        if (window.innerWidth < 992) {
+            elements.buildingImg.scrollIntoView({ behavior: "smooth" });
         }
     }
 
-    // Initialize
-    populateDropdown();
-    updateBuilding("ground"); // Set initial building
+    // --- 3. INITIALIZATION ---
+    populateUI();
+    // Load default: "ground"
+    updateBuilding("ground"); 
 
+    // NEW: Attach the filter function to the search input
     if (elements.searchInput) {
         elements.searchInput.addEventListener("keyup", filterBuildings);
     }
 });
+
 
 
 
