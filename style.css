@@ -9972,7 +9972,7 @@ h6,
     margin: 5px auto; /* Center the input slightly */
 }
 
-        :root {
+:root {
             --primary-color: #F9A825; /* A modern green */
             --secondary-color: #f8f9fa; /* Light grey background */
             --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -10032,8 +10032,11 @@ h6,
             display: flex;
             align-items: center;
             justify-content: space-between;
-          color: #ffffff !important;
+            color: #ffffff !important;
         }
+
+
+        
 
         #buildingDropdown {
             border-radius: 8px;
@@ -10064,10 +10067,7 @@ h6,
             color: #fff;
         }
         
-        .dropdown-item.active .material-icons {
-            color: #fff;
-        }
-        
+
         .dropdown-item .circle {
             display: none;
         }
