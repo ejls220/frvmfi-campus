@@ -2,7 +2,7 @@ import qrcode
 import os
 
 # GitHub Pages URL to your map.html
-url = "https://ejls220.github.io/frvmfi-campus-portal/map.html"
+url = "https://ejls220.github.io/frvmfi-campus/frvmfi-main"
 
 # Create QR code
 qr = qrcode.QRCode(
@@ -17,5 +17,6 @@ qr.make(fit=True)
 img_path = "qrcode.png"
 img = qr.make_image(fill="black", back_color="white")
 img.save(img_path)
+
 
 print(f"QR code generated at {img_path}")
