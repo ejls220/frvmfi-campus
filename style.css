@@ -10032,6 +10032,7 @@ h6,
             display: flex;
             align-items: center;
             justify-content: space-between;
+          color: #ffffff !important;
         }
 
         #buildingDropdown {
